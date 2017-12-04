@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Twitter: The Dope Version</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${messages}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    Content :<textarea rows="6" th:field="*{content}" />
+    <span th:if="${#fields.hasErrors('content')}"
+          th:errors="*{content}"></span><br />
+    <input type="hidden" th:field="*{id}"/>
+    PostedDate :<input type="date" th:field="*{posteddate}"/>
+    <span th:if="${#fields.hasErrors('posteddate')}"
+          th:errors="*{posteddate}"></span><br/>
+    <input type="hidden" th:field="*{id}" />
+    SentBy :<input type="text" th:field="*{sentby}" />
+    <span th:if="${#fields.hasErrors('sentby')}"
+          th:errors="*{sentby}"></span><br />
+    <input type="submit" value="Tweet" />
+</form>
+</body>
+</html>

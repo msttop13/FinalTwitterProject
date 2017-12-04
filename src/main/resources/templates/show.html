@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Twitter: The Dope Version</title>
+</head>
+<body>
+<a href="/">Show All Tweets</a><br />
+Content: <span th:text=" ${messages.content}" ></span><br/>
+PostedDate: <span th:text=" ${messages.posteddate}" ></span><br />
+SentBy <span th:text="${messages.sentby}"></span><br />
+</body>
+</html>
